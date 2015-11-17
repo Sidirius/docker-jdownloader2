@@ -10,12 +10,13 @@ On unRaid, install from the Community Repositories and enter the app folder loca
 On other platforms, you can run this docker with the following command:
 
 ```
-docker run -d --name="JDownloader2" -e HEIGHT="720" -e WIDTH="1280" -v /path/to/config:/config:rw -v /etc/localtime:/etc/localtime:ro -p XXXX:8080 aptalca/docker-jdownloader2
+docker run -d --name="JDownloader2" -e HEIGHT="720" -e WIDTH="1280" -e USER_ID=0 -e GROUP_ID=0 -v /path/to/config:/config:rw -v /etc/localtime:/etc/localtime:ro -p XXXX:8080 aptalca/docker-jdownloader2
 ```
 
 ### Setup Instructions:
 
 - Replace "/path/to/config" with your choice of folder location. That is where all of your configuration and library files will reside, so you won't lose data when you update, reinstall, etc.
+- Replace "USER_ID=0" and "GROUP_ID=0" with your desired UserID & GroupID
 - Replace "XXXX" with your choice of port.
 - You can change the screen resolution by modifying the WIDTH and HEIGHT variables.
 - Ctrl-Alt-Shft will bring up the menu that allows changing input options
